@@ -17,6 +17,8 @@ import Introduction from "./introduction";
 import About from "./about";
 import Bio from "./bio";
 import Testimonials from "./testimonials";
+import Services from "./services"
+import Packages from "./packages"
 // import { FaInstagram } from 'react-icons/fa';
 // import List from "./list";
 // import Post from "./post";
@@ -63,6 +65,12 @@ const theme = extendTheme({
       </Flex>
       <Flex direction="column" align="center" bg="brand.400">
           <Testimonials />
+      </Flex>
+      <Flex direction="column" align="center" bg="brand.100">
+          <Services />
+      </Flex>
+      <Flex direction="column" align="center" bg="brand.400">
+          <Packages />
       </Flex>
     </ChakraProvider>
   )

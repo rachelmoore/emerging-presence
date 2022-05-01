@@ -27,10 +27,14 @@ function Navigation() {
   
     return (
       <>
-        <Button ref={btnRef} ml={3} mr={3} bg="brand.200" onClick={onOpen}>
+        <Flex direction="row">
+            <Link link="https://instagram.com"><Icon as={FiMail} color="white" boxSize={7} mr={3}></Icon></Link>
+            <Link link="https://instagram.com"><Icon as={FaInstagram} color="white" boxSize={7}></Icon></Link>
+        </Flex>
+        {/* <Button ref={btnRef} ml={3} mr={3} bg="brand.200" onClick={onOpen}>
         <Icon as={FiMenu} color="white" boxSize={7} />
-        </Button>
-        <Drawer
+        </Button> */}
+        {/* <Drawer
           isOpen={isOpen}
           placement='right'
           onClose={onClose}
@@ -59,7 +63,7 @@ function Navigation() {
                 </Flex>
             </DrawerFooter>
           </DrawerContent>
-        </Drawer>
+        </Drawer> */}
       </>
     )
   }
