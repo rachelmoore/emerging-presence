@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Heading,
@@ -13,12 +13,14 @@ import {
   TabPanels,
   TabPanel,
   Flex,
-  useColorModeValue
+  useColorModeValue,
+  useFocusEffect
 } from '@chakra-ui/react';
 import { MdOutlineArrowForwardIos, MdOutlineArrowBackIos } from "react-icons/md"
 
 function Testimonials() {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
+    const [testimonialsTouched, setTestimonialsTouched] = useState(false);
     const testimonials = [
         { 
           index: 0,
@@ -50,6 +52,9 @@ function Testimonials() {
       ];
 
     function nextTestimonial() {
+        if (testimonialsTouched === false) {
+            setTestimonialsTouched(true);
+        }
         if (testimonials[currentTestimonial].index !== 2) {
             setCurrentTestimonial(currentTestimonial + 1)
         }
@@ -59,6 +64,9 @@ function Testimonials() {
     }
 
     function prevTestimonial() {
+        if (testimonialsTouched === false) {
+            setTestimonialsTouched(true);
+        }
         if (testimonials[currentTestimonial].index !== 0) {
             setCurrentTestimonial(currentTestimonial - 1)
         }
@@ -66,6 +74,23 @@ function Testimonials() {
             setCurrentTestimonial(2)
         }
     }
+
+    function autoNextTestimonial() {
+        if (testimonials[currentTestimonial].index !== 2) {
+            setCurrentTestimonial(currentTestimonial + 1)
+        }
+        if (testimonials[currentTestimonial].index === 2) {
+            setCurrentTestimonial(0)
+        }
+    }
+
+    function rotateTestimonials() {
+        if (testimonialsTouched === false) {
+            setTimeout(autoNextTestimonial, 10000);
+        }
+    }
+
+    rotateTestimonials();
   
     return (
     <Stack mt={20} mb={20}>
