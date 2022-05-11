@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect, Global, css, styled, Head } from "frontity";
+import Switch from "@frontity/components/switch";
 import {
   extendTheme,
   useMediaQuery,
@@ -21,8 +22,8 @@ import Services from "./services"
 import Packages from "./packages"
 // import { FaInstagram } from 'react-icons/fa';
 // import List from "./list";
-// import Post from "./post";
-// import Page from "./page";
+import Post from "./post";
+import Page from "./page";
 // import Header from "./header";
 import EPlogo from '../assets/EPlogo.jpg';
 
@@ -72,6 +73,10 @@ const theme = extendTheme({
       <Flex direction="column" align="center" bg="brand.400">
           <Packages />
       </Flex>
+      <Switch>
+        <Post when={data.isPost} />
+        <Page when={data.isPage} />
+      </Switch>
     </ChakraProvider>
   )
 }

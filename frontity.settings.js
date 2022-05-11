@@ -2,7 +2,7 @@ const settings = {
   "name": "emerging-presence",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
+      "url": "http://elunawp.technocowgirl.com",
       "title": "Emerging Presence",
       "description": "Psychospiritual Coaching and Transpersonal Guiding by Eluña Antle"
     }
@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "http://elunawp.technocowgirl.com"
         }
       }
     },
