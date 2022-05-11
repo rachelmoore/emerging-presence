@@ -14,7 +14,6 @@ import { BsTrophy } from "react-icons/bs"
 import { RiScales3Fill } from "react-icons/ri"
 import { FaYinYang } from "react-icons/fa"
 import { WiStars } from "react-icons/wi";
-import tcsitebrantbarn from "../assets/tcsitebrantbarn.jpg"
 import eluna2 from "../assets/eluna2.png"
 
 
