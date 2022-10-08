@@ -11,6 +11,14 @@ const elunaTheme = {
       isUrlVisible: false,
     },
   },
+  actions: {
+    theme: {
+      beforeSSR: async ({ state, libraries, actions }) => {
+        console.log('Gonna SSR this page');
+        await actions.source.fetch("/introduction/introduction/");
+      }
+    },
+  },
   libraries: {
     html2react: {
       processors: [link]

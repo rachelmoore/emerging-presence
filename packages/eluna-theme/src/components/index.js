@@ -24,15 +24,20 @@ import Packages from "./packages"
 // import List from "./list";
 import Post from "./post";
 import Page from "./page";
+import Loading from "./loading";
 // import Header from "./header";
 import EPlogo from '../assets/EPlogo.jpg';
+import FrontityURL from "frontity/dist/src/utils/url";
 
-const Root = ({ state, actions }) => {
+const Root = ({ state, actions, libraries }) => {
   const data = state.source.get(state.router.link);
-  console.log('data', data);
   const [mobileOS, setMobileOS] = useState(false)
-  const [isLargerThan800] = useMediaQuery("(min-width: 800px)")
-  const [isLargerThan1015] = useMediaQuery("(min-width: 1015px)")
+  const [isLargerThan800] = useMediaQuery("(min-width: 800px)");
+  const [isLargerThan1015] = useMediaQuery("(min-width: 1015px)");
+
+//   useEffect(async () => {
+// ;
+//   }, []);
 
 const theme = extendTheme({
   colors: {
@@ -74,8 +79,10 @@ const theme = extendTheme({
           <Packages />
       </Flex>
       <Switch>
+        <Loading when={data.isFetching} />
         <Post when={data.isPost} />
         <Page when={data.isPage} />
+        <Introduction when={data.isIntroduction} />
       </Switch>
     </ChakraProvider>
   )

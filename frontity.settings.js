@@ -15,7 +15,22 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "http://elunawp.technocowgirl.com"
+          "url": "http://elunawp.technocowgirl.com",
+          "api": "http://elunawp.technocowgirl.com/wp-json", 
+          "postTypes": [
+            {
+              type: "introduction",
+              endpoint: "introduction",
+              archive: "/introduction_cat"
+            }
+          ],
+          taxonomies: [
+            {
+              taxonomy: "introduction_cat",
+              endpoint: "introduction_cat",
+              postTypeEndpoint: "introduction"
+            }
+          ]
         }
       }
     },
